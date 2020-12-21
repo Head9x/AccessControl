@@ -7,28 +7,39 @@ namespace NewCard
     {
         static void Main(string[] args)
         {
-            // Define new card
-            Console.WriteLine("Present card");
+            // find out how many times program should add cards
+            Console.WriteLine("How many cards should be configured? 8 is max number");
+            string cards = Console.ReadLine();
 
-            // Add new card as string
-            string accesscard = Console.ReadLine();
+            // convert string cards to int for loop
+            int times = 0;
+            Int32.TryParse(cards, out times);
 
-            // Write data from card to file
-            FileStream f = new FileStream("D:\\visualstudio projekter\\AccessControl\\AccessControl\\card.txt", FileMode.OpenOrCreate);
+            for (int i = 0; i < times; i++)
+            {
+                // Define new card
+                Console.WriteLine("Present card");
 
-            //declared stream writer
-            StreamWriter s = new StreamWriter(f);
+                // Add new card as string
+                string accesscard = Console.ReadLine();
 
-            Console.WriteLine("Writing data to file");
+                // Write data from card to file
+                FileStream f = new FileStream("D:\\visualstudio projekter\\AccessControl\\AccessControl\\cards.txt", FileMode.Append);
 
-            s.WriteLine(accesscard);
+                //declared stream writer
+                StreamWriter s = new StreamWriter(f);
 
-            //closing stream writer
-            s.Close();
-            f.Close();
+                Console.WriteLine("Writing data to file");
 
-            // Finished
-            Console.WriteLine("Data written to file");
+                s.WriteLine(accesscard);
+
+                //closing stream writer
+                s.Close();
+                f.Close();
+
+                // Finished
+                Console.WriteLine("Data written to file");
+            }
         }
     }
 }
