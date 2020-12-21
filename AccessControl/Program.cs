@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.IO;
 
 namespace AccessControl
 {
@@ -10,9 +7,20 @@ namespace AccessControl
     {
         static void Main(string[] args)
         {
-            // Define access giving card
-            string accesscard = "1606860297";
+            // Read card.txt to find accesscard number
+            FileStream f = new FileStream("D:\\visualstudio projekter\\AccessControl\\AccessControl\\card.txt", FileMode.OpenOrCreate);
 
+            //declared stream reader
+            StreamReader sr = new StreamReader(f);
+
+            string accesscard = sr.ReadLine();
+
+            //closing stream writer
+            sr.Close();
+            f.Close();
+
+// Looping code            
+Loop:
             // Present card to reader
             Console.WriteLine("Present card:");
 
@@ -30,6 +38,7 @@ namespace AccessControl
                 Console.WriteLine("Card Denied");
 
             };
+            goto Loop;
         }
     }
 }

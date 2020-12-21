@@ -1,1 +1,5 @@
 D:\visualstudio projekter\AccessControl\AccessControl\bin\Debug\ConsoleApplication8.exe.config
+D:\visualstudio projekter\AccessControl\AccessControl\bin\Debug\ConsoleApplication8.exe
+D:\visualstudio projekter\AccessControl\AccessControl\bin\Debug\ConsoleApplication8.pdb
+D:\visualstudio projekter\AccessControl\AccessControl\obj\Debug\ConsoleApplication8.exe
+D:\visualstudio projekter\AccessControl\AccessControl\obj\Debug\ConsoleApplication8.pdb
